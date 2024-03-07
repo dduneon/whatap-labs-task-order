@@ -1,4 +1,4 @@
-package io.whatap.task.domain;
+package io.whatap.task.client;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,6 +1,5 @@
-package io.whatap.task.adaptor;
+package io.whatap.task.client;
 
-import io.whatap.task.domain.ProductResponseDto;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -15,9 +14,9 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
  * @version : 2024. 03. 07
  */
 
-@Path("/api/product")
+@Path("/api/products")
 @RegisterRestClient
-public interface ProductService {
+public interface ProductAdaptor {
     @GET
     @Path("/{productId}")
     @Produces(MediaType.APPLICATION_JSON)

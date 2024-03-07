@@ -3,6 +3,7 @@ package io.whatap.task.entity;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,6 +17,7 @@ import lombok.NoArgsConstructor;
  * @version 2024. 03. 07
  */
 @Entity
+@Table(name = "Orders")
 @AllArgsConstructor
 @Builder
 @Getter
