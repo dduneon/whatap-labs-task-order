@@ -1,5 +1,6 @@
 package io.whatap.task.domain.res;
 
+import io.whatap.task.client.ProductResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -7,11 +8,12 @@ import lombok.Getter;
  * description
  *
  * @author 김준현
- * @version 2024. 03. 07
+ * @version 2024. 03. 08
  */
+
 @AllArgsConstructor
 @Getter
-public class OrderResponseDto {
+public class OrderDetailResponseDto {
     private Long orderId;
-    private Long productId;
+    private ProductResponseDto productResponseDto;
 }
