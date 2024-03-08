@@ -15,5 +15,5 @@ import lombok.Getter;
 @Getter
 public class OrderDetailResponseDto {
     private Long orderId;
-    private ProductResponseDto productResponseDto;
+    private ProductResponseDto productDetail;
 }

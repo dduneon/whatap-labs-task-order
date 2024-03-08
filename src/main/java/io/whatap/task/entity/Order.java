@@ -25,4 +25,8 @@ import lombok.NoArgsConstructor;
 public class Order extends PanacheEntity {
     @Column(name = "product_id")
     private Long productId;
+
+    public void updateProduct(Long productId) {
+        this.productId = productId;
+    }
 }
