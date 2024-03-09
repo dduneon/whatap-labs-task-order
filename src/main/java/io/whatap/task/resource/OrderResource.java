@@ -4,12 +4,15 @@ import io.whatap.task.domain.req.OrderCreateRequestDto;
 import io.whatap.task.domain.req.OrderUpdateRequestDto;
 import io.whatap.task.service.OrderService;
 import jakarta.validation.Valid;
+import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Path("/api/orders")
+@Produces(MediaType.APPLICATION_JSON)
 public class OrderResource {
     private final OrderService orderService;
 
@@ -41,12 +45,14 @@ public class OrderResource {
     }
 
     @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response orderProduct(@Valid OrderCreateRequestDto orderCreateRequestDto) {
         orderService.createOrder(orderCreateRequestDto);
         return Response.status(Response.Status.CREATED).build();
     }
 
     @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
     public Response changeProduct(@Valid OrderUpdateRequestDto orderUpdateRequestDto) {
         orderService.updateOrder(orderUpdateRequestDto);
         return Response.status(Response.Status.NO_CONTENT).build();
