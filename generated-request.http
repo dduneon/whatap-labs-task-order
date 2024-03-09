@@ -71,3 +71,9 @@ DELETE http://localhost:7020/api/orders/2
 ### 주문 삭제 요청(주문이 존재하지 않는 경우)
 DELETE http://localhost:7020/api/orders/1111
 
+### Sleep 요청 (Default = 10초)
+GET http://localhost:7020/api/sleep
+
+### Sleep 요청 (시간 지정)
+GET http://localhost:7020/api/sleep?interval=5
+
