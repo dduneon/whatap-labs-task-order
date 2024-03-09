@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 /**
- * description
+ * 상품 생성 요청 Dto 클래스
  *
  * @author 김준현
  * @version 2024. 03. 07

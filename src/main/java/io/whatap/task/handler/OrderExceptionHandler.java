@@ -8,13 +8,19 @@ import jakarta.ws.rs.ext.Provider;
 import java.util.Map;
 
 /**
- * description
+ * Order 에서 발생하는 예외를 처리하는 Exception Handler 클래스
  *
  * @author 김준현
  * @version 2024. 03. 09
  */
 @Provider
 public class OrderExceptionHandler implements ExceptionMapper<Exception> {
+    /**
+     * Exception 이 발생했을 때, Exception Type 에 따른 응답을 리턴하는 메서드
+     *
+     * @param exception 발생한 Exception 객체
+     * @return Exception 에 따른 적절한 응답
+     */
     @Override
     public Response toResponse(Exception exception) {
         if (exception instanceof OrderNotFoundException || exception instanceof ProductNotExistException) {
