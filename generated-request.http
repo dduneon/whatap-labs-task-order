@@ -2,7 +2,7 @@
 GET http://localhost:7020/api/orders
 
 ### 특정 주문 상세 정보 가져오는 요청
-GET http://localhost:7020/api/orders/51
+GET http://localhost:7020/api/orders/1
 
 ### 특정 주문 상세 정보 가져오는 요청 (주문이 존재하지 않는 경우)
 GET http://localhost:7020/api/orders/1111
@@ -12,7 +12,7 @@ POST http://localhost:7020/api/orders
 Content-Type: application/json
 
 {
-  "productId": 3
+  "productId": 1
 }
 
 ### 상품 주문 요청(상품이 존재하지 않는 경우)
@@ -23,12 +23,19 @@ Content-Type: application/json
   "productId": 1000
 }
 
+### 상품 주문 요청(잘못된 요청의 경우)
+POST http://localhost:7020/api/orders
+Content-Type: application/json
+
+{
+}
+
 ### 주문 수정 요청
 PUT http://localhost:7020/api/orders
 Content-Type: application/json
 
 {
-  "orderId": 51,
+  "orderId": 1,
   "productId": 3
 }
 
@@ -46,12 +53,20 @@ PUT http://localhost:7020/api/orders
 Content-Type: application/json
 
 {
-  "orderId": 51,
+  "orderId": 1,
+  "productId": 1000
+}
+
+### 주문 수정 요청 (잘못된 요청의 경우)
+PUT http://localhost:7020/api/orders
+Content-Type: application/json
+
+{
   "productId": 1000
 }
 
 ### 주문 삭제 요청
-DELETE http://localhost:7020/api/orders/51
+DELETE http://localhost:7020/api/orders/2
 
 ### 주문 삭제 요청(주문이 존재하지 않는 경우)
 DELETE http://localhost:7020/api/orders/1111
