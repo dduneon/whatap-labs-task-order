@@ -1,11 +1,11 @@
-package io.whatap.task.domain.res;
+package io.whatap.task.order.domain.res;
 
-import io.whatap.task.entity.Order;
+import io.whatap.task.order.entity.Order;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * description
+ * 특정 주문의 ID 와 해당하는 상품의 ID를 응답하는 Dto 클래스
  *
  * @author 김준현
  * @version 2024. 03. 07

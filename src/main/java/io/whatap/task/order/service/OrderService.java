@@ -1,16 +1,16 @@
-package io.whatap.task.service;
+package io.whatap.task.order.service;
 
 import io.quarkus.panache.common.Sort;
 import io.whatap.task.client.ProductAdaptor;
 import io.whatap.task.client.ProductResponseDto;
-import io.whatap.task.domain.req.OrderCreateRequestDto;
-import io.whatap.task.domain.req.OrderUpdateRequestDto;
-import io.whatap.task.domain.res.OrderAllResponseDto;
-import io.whatap.task.domain.res.OrderDetailResponseDto;
-import io.whatap.task.domain.res.OrderResponseDto;
-import io.whatap.task.entity.Order;
 import io.whatap.task.exception.OrderNotFoundException;
 import io.whatap.task.exception.ProductNotExistException;
+import io.whatap.task.order.domain.req.OrderCreateRequestDto;
+import io.whatap.task.order.domain.req.OrderUpdateRequestDto;
+import io.whatap.task.order.domain.res.OrderAllResponseDto;
+import io.whatap.task.order.domain.res.OrderDetailResponseDto;
+import io.whatap.task.order.domain.res.OrderResponseDto;
+import io.whatap.task.order.entity.Order;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.WebApplicationException;
@@ -22,7 +22,7 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.resteasy.reactive.ClientWebApplicationException;
 
 /**
- * description
+ * 주문에 관한 CRUD 를 제공하는 서비스 클래스
  *
  * @author 김준현
  * @version 2024. 03. 07
@@ -93,6 +93,12 @@ public class OrderService {
         }
     }
 
+    /**
+     * 상품이 존재하는 지 판단하는 메서드
+     *
+     * @param productId 판단할 상품 아이디
+     * @return 상품이 존재하면 true, 존재하지 않으면 false
+     */
     private boolean isExistProduct(Long productId) {
         try {
             ProductResponseDto product = productAdaptor.getProductById(productId);

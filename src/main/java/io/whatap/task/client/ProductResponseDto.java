@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * description:
+ * 상품 요청에 대한 응답 Dto 클래스
  *
  * @author : dduneon
  * @version : 2024. 03. 07

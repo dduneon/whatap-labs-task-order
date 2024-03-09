@@ -1,11 +1,11 @@
-package io.whatap.task.domain.res;
+package io.whatap.task.order.domain.res;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * description
+ * 모든 주문 리스트를 응답하는 Dto 클래스
  *
  * @author 김준현
  * @version 2024. 03. 09
