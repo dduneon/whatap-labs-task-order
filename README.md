@@ -1,13 +1,248 @@
 # Order API
 
-주문에 관한 CRUD를 제공하는 API 입니다
+요구사항에 따른 응답을 제공하는 REST API 입니다
 
-## 요구사항 분석
+## ERD 설계
+![image](https://github.com/dduneon/whatap-labs-task-order/assets/84072084/f92cabd6-fcf8-49be-9bee-f617c49f4d17)
 
-### ER 다이어그램
-![image](https://github.com/dduneon/whatap-labs-task-order/assets/84072084/98c9ae86-471d-4ea0-82fc-cd9633f852f5)
+## API 명세
+![image](https://github.com/dduneon/whatap-labs-task-order/assets/84072084/e1513926-21b0-42eb-808c-e19b7ff0f3eb)
 
-ERDCloud를 활용하여 erd를 작성해 보았습니다
+## API 사용 예시
 
-### API 명세
-![image](https://github.com/dduneon/whatap-labs-task-order/assets/84072084/7e8bd1ec-02f3-448a-b31a-8308fc94e80b)
+### `GET /api/orders`
+
+> 모든 주문 정보를 가져오는 요청
+
+요청
+```http
+GET http://localhost:7020/api/orders
+```
+응답
+```http
+HTTP/1.1 200 OK
+{
+  "count": 3,
+  "orders": [
+    {
+      "orderId": 1,
+      "productId": 1
+    },
+    {
+      "orderId": 2,
+      "productId": 1
+    },
+    {
+      "orderId": 3,
+      "productId": 1
+    }
+  ]
+}
+```
+
+### `GET /api/orders/{orderId}`
+
+> 특정 주문 상세 정보를 가져오는 요청
+
+요청
+```http
+GET /api/orders/1
+```
+응답
+```http
+HTTP/1.1 200 OK
+{
+  "orderId": 1,
+  "productDetail": {
+    "id": 1,
+    "name": "상품명",
+    "description": "상품설명"
+  }
+}
+```
+
+<br>
+
+요청
+```http
+GET /api/orders/1111
+```
+응답
+```http
+HTTP/1.1 404 Not Found
+{
+  "message": "Order(id=1111) 를 찾을 수 없습니다",
+  "status": 404
+}
+```
+
+### `POST /api/orders`
+
+> 상품 주문 요청
+
+요청
+```http
+POST /api/orders
+Content-Type: application/json
+{
+  "productId": 1
+}
+```
+응답
+```http
+HTTP/1.1 201 Created
+```
+
+<br>
+
+요청
+```http
+POST /api/orders
+Content-Type: application/json
+{
+  "productId": 1000
+}
+```
+응답
+```http
+HTTP/1.1 404 Not Found
+{
+  "message": "Product(id=1000) 를 찾을 수 없습니다",
+  "status": 404
+}
+```
+
+<br>
+
+요청
+```http
+POST /api/orders
+Content-Type: application/json
+{
+}
+```
+응답
+```http
+HTTP/1.1 400 Bad Request
+{
+  "title": "Constraint Violation",
+  "status": 400,
+  "violations": [
+    {
+      "field": "orderProduct.orderCreateRequestDto.productId",
+      "message": "productId 필드가 비어 있습니다"
+    }
+  ]
+}
+```
+
+### `PUT /api/orders`
+
+> 주문 수정 요청
+
+요청
+```http
+PUT http://localhost:7020/api/orders
+Content-Type: application/json
+{
+  "orderId": 1,
+  "productId": 3
+}
+```
+응답
+```http
+HTTP/1.1 204 No Content
+```
+
+<br>
+
+요청
+```http
+PUT http://localhost:7020/api/orders
+Content-Type: application/json
+{
+  "orderId": 100,
+  "productId": 3
+}
+```
+응답
+```http
+HTTP/1.1 404 Not Found
+{
+  "message": "Order(id=100) 를 찾을 수 없습니다",
+  "status": 404
+}
+```
+
+<br>
+
+요청
+```http
+PUT http://localhost:7020/api/orders
+Content-Type: application/json
+{
+  "orderId": 1,
+  "productId": 1000
+}
+```
+응답
+```http
+HTTP/1.1 404 Not Found
+{
+  "message": "Product(id=1000) 를 찾을 수 없습니다",
+  "status": 404
+}
+```
+
+<br>
+
+요청
+```http
+PUT http://localhost:7020/api/orders
+Content-Type: application/json
+{
+  "productId": 1
+}
+```
+응답
+```http
+HTTP/1.1 400 Bad Request
+{
+  "title": "Constraint Violation",
+  "status": 400,
+  "violations": [
+    {
+      "field": "changeProduct.orderUpdateRequestDto.orderId",
+      "message": "orderId 필드가 비어 있습니다"
+    }
+  ]
+}
+```
+
+### `DELETE /api/orders/{orderId}`
+
+> 주문 삭제 요청
+
+요청
+```http
+DELETE http://localhost:7020/api/orders/2
+```
+응답
+```http
+HTTP/1.1 204 No Content
+```
+
+<br>
+
+요청
+```http
+DELETE http://localhost:7020/api/orders/1111
+```
+응답
+```http
+HTTP/1.1 404 Not Found
+{
+  "message": "Order(id=1111) 를 찾을 수 없습니다",
+  "status": 404
+}
+```
