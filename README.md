@@ -8,6 +8,8 @@
 ## API 명세
 ![image](https://github.com/dduneon/whatap-labs-task-order/assets/84072084/e1513926-21b0-42eb-808c-e19b7ff0f3eb)
 
+![image](https://github.com/dduneon/whatap-labs-task-order/assets/84072084/9bec3df0-8b25-4e86-8ed1-59b8877eb50c)
+
 ## API 사용 예시
 
 ### `GET /api/orders`
@@ -39,6 +41,8 @@ HTTP/1.1 200 OK
   ]
 }
 ```
+
+<br>
 
 ### `GET /api/orders/{orderId}`
 
@@ -75,6 +79,8 @@ HTTP/1.1 404 Not Found
   "status": 404
 }
 ```
+
+<br>
 
 ### `POST /api/orders`
 
@@ -135,6 +141,8 @@ HTTP/1.1 400 Bad Request
   ]
 }
 ```
+
+<br>
 
 ### `PUT /api/orders`
 
@@ -219,6 +227,8 @@ HTTP/1.1 400 Bad Request
 }
 ```
 
+<br>
+
 ### `DELETE /api/orders/{orderId}`
 
 > 주문 삭제 요청
@@ -245,4 +255,34 @@ HTTP/1.1 404 Not Found
   "message": "Order(id=1111) 를 찾을 수 없습니다",
   "status": 404
 }
+```
+
+<br>
+
+### `GET /api/sleep?interval=`
+
+> Sleep 요청
+
+요청
+```http
+GET http://localhost:7020/api/sleep
+```
+응답
+```http
+HTTP/1.1 204 No Content
+
+<Response body is empty>Response code: 204 (No Content); Time: 10889ms (10 s 889 ms);
+```
+
+<br>
+
+요청
+```http
+GET http://localhost:7020/api/sleep?interval=5
+```
+응답
+```http
+HTTP/1.1 204 No Content
+
+<Response body is empty>Response code: 204 (No Content); Time: 5013ms (5 s 13 ms);
 ```
