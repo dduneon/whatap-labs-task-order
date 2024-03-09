@@ -1,5 +1,6 @@
 package io.whatap.task.domain.req;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,5 +13,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class OrderCreateRequestDto {
+    @NotBlank(message = "productId 필드가 비어 있습니다")
     private Long productId;
 }
