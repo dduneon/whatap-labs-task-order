@@ -1,8 +1,8 @@
-package io.whatap.task.resource;
+package io.whatap.task.order.resource;
 
-import io.whatap.task.domain.req.OrderCreateRequestDto;
-import io.whatap.task.domain.req.OrderUpdateRequestDto;
-import io.whatap.task.service.OrderService;
+import io.whatap.task.order.domain.req.OrderCreateRequestDto;
+import io.whatap.task.order.domain.req.OrderUpdateRequestDto;
+import io.whatap.task.order.service.OrderService;
 import jakarta.validation.Valid;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;

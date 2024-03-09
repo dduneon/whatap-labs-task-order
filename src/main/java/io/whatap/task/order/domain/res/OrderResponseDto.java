@@ -1,6 +1,6 @@
-package io.whatap.task.domain.res;
+package io.whatap.task.order.domain.res;
 
-import io.whatap.task.entity.Order;
+import io.whatap.task.order.entity.Order;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

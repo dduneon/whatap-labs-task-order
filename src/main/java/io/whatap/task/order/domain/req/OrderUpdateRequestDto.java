@@ -1,4 +1,4 @@
-package io.whatap.task.domain.req;
+package io.whatap.task.order.domain.req;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

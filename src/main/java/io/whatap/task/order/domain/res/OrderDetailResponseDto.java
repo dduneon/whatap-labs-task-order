@@ -1,4 +1,4 @@
-package io.whatap.task.domain.res;
+package io.whatap.task.order.domain.res;
 
 import io.whatap.task.client.ProductResponseDto;
 import lombok.AllArgsConstructor;

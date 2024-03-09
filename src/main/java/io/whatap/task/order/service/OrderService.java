@@ -1,16 +1,16 @@
-package io.whatap.task.service;
+package io.whatap.task.order.service;
 
 import io.quarkus.panache.common.Sort;
 import io.whatap.task.client.ProductAdaptor;
 import io.whatap.task.client.ProductResponseDto;
-import io.whatap.task.domain.req.OrderCreateRequestDto;
-import io.whatap.task.domain.req.OrderUpdateRequestDto;
-import io.whatap.task.domain.res.OrderAllResponseDto;
-import io.whatap.task.domain.res.OrderDetailResponseDto;
-import io.whatap.task.domain.res.OrderResponseDto;
-import io.whatap.task.entity.Order;
 import io.whatap.task.exception.OrderNotFoundException;
 import io.whatap.task.exception.ProductNotExistException;
+import io.whatap.task.order.domain.req.OrderCreateRequestDto;
+import io.whatap.task.order.domain.req.OrderUpdateRequestDto;
+import io.whatap.task.order.domain.res.OrderAllResponseDto;
+import io.whatap.task.order.domain.res.OrderDetailResponseDto;
+import io.whatap.task.order.domain.res.OrderResponseDto;
+import io.whatap.task.order.entity.Order;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.WebApplicationException;

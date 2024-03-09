@@ -1,4 +1,4 @@
-package io.whatap.task.domain.res;
+package io.whatap.task.order.domain.res;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
