@@ -12,7 +12,7 @@
 
 ## API 사용 예시
 
-### `GET /api/orders`
+### GET /api/orders
 
 > 모든 주문 정보를 가져오는 요청
 
@@ -44,7 +44,7 @@ HTTP/1.1 200 OK
 
 <br>
 
-### `GET /api/orders/{orderId}`
+### GET /api/orders/{orderId}
 
 > 특정 주문 상세 정보를 가져오는 요청
 
@@ -82,7 +82,7 @@ HTTP/1.1 404 Not Found
 
 <br>
 
-### `POST /api/orders`
+### POST /api/orders
 
 > 상품 주문 요청
 
@@ -144,7 +144,7 @@ HTTP/1.1 400 Bad Request
 
 <br>
 
-### `PUT /api/orders`
+### PUT /api/orders
 
 > 주문 수정 요청
 
@@ -229,7 +229,7 @@ HTTP/1.1 400 Bad Request
 
 <br>
 
-### `DELETE /api/orders/{orderId}`
+### DELETE /api/orders/{orderId}
 
 > 주문 삭제 요청
 
@@ -259,7 +259,7 @@ HTTP/1.1 404 Not Found
 
 <br>
 
-### `GET /api/sleep?interval=`
+### GET /api/sleep?interval=
 
 > Sleep 요청
 
