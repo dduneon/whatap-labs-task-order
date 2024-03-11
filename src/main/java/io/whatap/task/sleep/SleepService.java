@@ -3,6 +3,7 @@ package io.whatap.task.sleep;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
+import jakarta.transaction.Transactional;
 
 /**
  * sleep 에 관한 기능을 제공하는 서비스 클래스
@@ -24,6 +25,7 @@ public class SleepService {
      *
      * @param interval 프로세스가 진행되기 전 반드시 경과해야 하는 시간(초)
      */
+    @Transactional
     public void callPgSleep(Double interval) {
         Query query = entityManager.createNativeQuery("SELECT pg_sleep(?)")
                 .setParameter(1, interval);

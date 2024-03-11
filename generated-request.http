@@ -36,7 +36,7 @@ Content-Type: application/json
 
 {
   "orderId": 1,
-  "productId": 3
+  "productId": 2
 }
 
 ### 주문 수정 요청 (주문이 존재하지 않는 경우)
@@ -45,7 +45,7 @@ Content-Type: application/json
 
 {
   "orderId": 100,
-  "productId": 3
+  "productId": 2
 }
 
 ### 주문 수정 요청 (상품이 존재하지 않는 경우)
@@ -75,5 +75,5 @@ DELETE http://localhost:7020/api/orders/1111
 GET http://localhost:7020/api/sleep
 
 ### Sleep 요청 (시간 지정)
-GET http://localhost:7020/api/sleep?interval=5
+GET http://localhost:7020/api/sleep?interval=2
 
